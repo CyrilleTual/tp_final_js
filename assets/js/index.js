@@ -7,7 +7,7 @@ function toggleSection (){
 
 function toggleAside(){
     const aside = document.querySelector("aside");
-    aside.style.display !== "none" ? aside.style.display ="none" : aside.style.display =""
+    aside.style.display !== "none" ? aside.style.display ="none" : aside.style.display ="";
 }
 
 window.addEventListener('DOMContentLoaded', () =>{
@@ -18,6 +18,6 @@ window.addEventListener('DOMContentLoaded', () =>{
         .addEventListener('click', toggleSection);
 
     document.getElementById ('btn-aside')
-        .addEventListener('click', toggleAside)    
+        .addEventListener('click', toggleAside);    
 })
 
