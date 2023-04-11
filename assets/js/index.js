@@ -19,25 +19,25 @@ for (const item in datas.section) {
         
     }else{ // on est dans chaque menu et on va les parcourir
 
-       
-
-        for (const elt in (datas.section [item])) {
-
-            // on créer un element de type article pour chaque menu
+                   // on créer un element de type article pour chaque menu
             const article = document.createElement('article')
             anchor.append(article);
 
+        for (const elt in (datas.section [item])) {
 
             if (elt === "title"){ 
-                console.log ("title du menu ", item)
+                console.log ("title du menu ", (datas.section [item])[elt])
                 const domElt= document.createElement('h3')
-                domElt.textContent = `The ${item}` ;
+                domElt.textContent = (datas.section [item])[elt] ;
                 article.append(domElt)
                
-
             }
             if (elt === "img"){
-                let myImage=((datas.section [item])[elt]) 
+                let myImage=((datas.section [item])[elt])
+                const domElt= document.createElement('img')
+                domElt.src = myImage.url;
+                domElt.alt = myImage.alt; 
+                article.append(domElt)
                 console.log(myImage)
             }
             if ( elt === "para"){    
