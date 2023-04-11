@@ -25,3 +25,5 @@ const datas = {
     },
         
 }
+
+export {datas}
