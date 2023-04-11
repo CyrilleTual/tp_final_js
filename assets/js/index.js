@@ -11,7 +11,7 @@ function toggleAside(){
 }
 
 window.addEventListener('DOMContentLoaded', () =>{
-    feed();  // charge le contenu de la page a partie du fichier de datas (data/index.js)
+    feed();  // charge le contenu de la page à partir du fichier de datas (data/index.js)
 
     // listen sur les bts
     document.getElementById ('btn-section')
