@@ -7,11 +7,18 @@ function feed(){
     // parcours de l'objet section 
     for (const item in datas.section) {
 
-        if (item === "title") {         // on traite le titre (tableau)
-            const domElt= document.createElement('h2')
+        if (item === "title") {         // on traite le titre (tableau) dans 2 span car couleur differents
+            const domElt= document.createElement('h2');
+
+
             for (const word of (datas.section [item])) {
-                domElt.innerText += word  
+                let span = document.createElement('span');
+                span.innerText = word;
+                domElt.appendChild(span);  
             }
+
+           domElt.classList.add
+
             anchor.appendChild(domElt)
             
         }else{ // on est dans chaque menu et on va les parcourir
@@ -20,12 +27,23 @@ function feed(){
             const article = document.createElement('article')
             anchor.append(article);
 
+    
             // on crée le contenu de chaque article :
             for (const elt in (datas.section [item])) {
                 if (elt === "title"){ 
                     const domElt= document.createElement('h3')
                     domElt.textContent = (datas.section [item])[elt] ;
-                    article.append(domElt) 
+
+                     // création des magnifiques goutees d'eau
+                    const droplet1 = (document.createElement('i'))
+                    droplet1.classList.add("fa-droplet","fa-solid")
+                    const droplet2 = (document.createElement('i'))
+                    droplet2.classList.add("fa-droplet","fa-solid")
+              
+                    article.append(domElt)
+                    // accrochages des gouttes
+                    domElt.insertAdjacentElement('afterbegin',droplet1)
+                    domElt.insertAdjacentElement('beforeend',droplet2)
                 }
                 if (elt === "img"){
                     let myImage=((datas.section [item])[elt])
