@@ -1,11 +1,11 @@
 const datas = {
     section: {
-        title: ["Today's ", "Special"],
+        title: ["Today's ", "Special  ", "goodies"],
         crustyFish : {
             title: "The Crusty fish",
             img: {url : "./assets/img/recipe1.jpg", alt: "fresh fries fish with some green pees and a white sauce"},
             para: [
-                {p1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et? rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?",},
+                {p1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et? Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?",},
                 {p2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?",},
                 {p3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem dicta incidunt autem nulla amet laboriosam quos nostrum eveniet et?",},
             ],
