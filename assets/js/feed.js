@@ -61,6 +61,14 @@ function feed(){
                             article.append(domElt);
                         }              
                     }        
+                }
+                if (elt === "a"){
+                    let textA=((datas.section [item])[elt]);
+                    const domElt= document.createElement('a');
+                    domElt.href="#";
+                    domElt.target = "_blanck";
+                    domElt.textContent = textA;
+                    article.append(domElt);
                 }     
             }       
         }
