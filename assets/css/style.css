@@ -80,8 +80,7 @@ main section:nth-child(1) {
 }
 
 main section:nth-child(2){
-   /* display: none; */
-    display: flex; 
+    display: none;
     width: calc(75% - 15px);
     justify-content: center;
     flex-wrap: wrap;
