@@ -35,10 +35,20 @@ function injectNews(date, text){
 
 
 
+
+
+
+
+
+
 function feedNews(){
     for (const item in news) {
 
         let date =  (new Date((news[item]).date));
+
+        console.log (date instanceof Object)
+
+
         let text = (news[item]).text;
 
         injectNews(date, text);
