@@ -1,8 +1,13 @@
 import { datas } from "../../data/index.js";
 import { creElt, appDom } from "./utils.js";
 
-
+/**
+ * fonction injexction du titre principal de la section
+ * @param {HTMLElement} anchor 
+ * @param {Array} title 
+ */
 function injectSectionTitle (anchor, title){
+
     const domElt= creElt('h2');
     // différents span car coloration du premier mot
     for (let i = 0; i < (title).length; i++){
@@ -17,7 +22,11 @@ function injectSectionTitle (anchor, title){
     appDom(anchor, domElt);
 }
 
-
+/**
+ * injection du titre de chaque article (menu)
+ * @param {HTMLElement} anchor 
+ * @param {string} title 
+ */
 function injectTitle (anchor, title){
 
     const domElt = creElt('h3');
@@ -35,6 +44,11 @@ function injectTitle (anchor, title){
     domElt.insertAdjacentElement('beforeend',droplet2);
 }
 
+/**
+ * injection de l'image
+ * @param {HTMLElement} anchor 
+ * @param {Object} img 
+ */
 function injectImg(anchor, img){
     const domElt    = creElt('img');
     domElt.src      = img.url;
@@ -42,7 +56,14 @@ function injectImg(anchor, img){
     appDom(anchor, domElt);
 }
 
+
+/**
+ * injection des paragraphes
+ * @param {HTMLElement} anchor 
+ * @param {Array} para 
+ */
 function injectPara(anchor, para){
+           
     for (const paragraphe of (para)) {  // tableau de paragraphes objets
     // pour chaque objet paragraphe  on boucle  
         for (const id in paragraphe) {
@@ -53,7 +74,11 @@ function injectPara(anchor, para){
     }        
 }
 
-function injectA(anchor, a){
+/**
+ * injection du lien
+ * @param {HTMLElement} anchor 
+ * @param {String} a 
+ */
 
     const domElt = creElt('a');
         domElt.href         = "#";
@@ -63,8 +88,11 @@ function injectA(anchor, a){
 }
 
 
-function feed(){
 
+/**
+ * fonction de remplissage des menus à partir d'un fichier de datas
+ */
+function feed(){
     // ancre : 2 eme section du main
     const anchor = document.querySelector ('main section:nth-child(2)');
 

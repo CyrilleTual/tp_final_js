@@ -12,11 +12,9 @@ function toggleAside(){
 }
 
 window.addEventListener('DOMContentLoaded', () =>{
-    feedMenus();  // charge le contenu de la page à partir du fichier de datas (data/index.js)
+    feedMenus();  // charge le contenu de la section à partir du fichier de datas (data/index.js)
 
-    feedNews();
-
-    
+    feedNews(); // charge le contenu du aside à partir du fichier de news (data/news.js)
 
     // listen sur les bts
     document.getElementById ('btn-section')
