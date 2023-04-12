@@ -8,7 +8,7 @@ function toggleSection (){
 
 function toggleAside(){
     const aside = document.querySelector("aside");
-    aside.style.display !== "none" ? aside.style.display ="none" : aside.style.display ="";
+    aside.style.display !== "none" || "" ? aside.style.display ="none" : aside.style.display ="";
 }
 
 window.addEventListener('DOMContentLoaded', () =>{

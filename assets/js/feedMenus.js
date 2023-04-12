@@ -1,5 +1,6 @@
 import { datas } from "../../data/index.js";
 import { creElt, appDom } from "./utils.js";
+import Bloc from "./class/Bloc.js";
 
 
 /**
@@ -9,18 +10,17 @@ import { creElt, appDom } from "./utils.js";
  */
 function injectSectionTitle (anchor, title){
 
-    const domElt= creElt('h2');
-    // différents span car coloration du premier mot
+    // création d'un bloc titre vide 
+    let blocTitle = new Bloc(anchor,"","h2");
+    // blocTitle.appendDom()
+    // traitement du contenu du H2
     for (let i = 0; i < (title).length; i++){
-        const span = creElt('span');
-        span.innerText = (title)[i];
-        // coloration en vert du premier mot              
+        let anchor = document.querySelector(blocTitle.typeOfElt)
+        let blocSpan = new Bloc (anchor,(title)[i],"i")
         if (i === 0){
-            span.classList.add('secondary-color');
-        }
-        appDom(domElt,span);
+           blocSpan.blocClassListAdd('secondary-color');
+        }   
     }
-    appDom(anchor, domElt);
 }
 
 /**
@@ -30,19 +30,8 @@ function injectSectionTitle (anchor, title){
  */
 function injectTitle (anchor, title){
 
-    const domElt = creElt('h3');
-    domElt.textContent = (title) ;
-
-    // création des magnifiques goutees d'eau
-    const droplet1 = (creElt('i'));
-    const droplet2 = (creElt('i'));
-    droplet1.classList.add("fa-droplet","fa-solid");
-    droplet2.classList.add("fa-droplet","fa-solid");
-
-    appDom(anchor,domElt);
-    // accrochages des gouttes
-    domElt.insertAdjacentElement('afterbegin',droplet1);
-    domElt.insertAdjacentElement('beforeend',droplet2);
+    let blocArticleTitle = new Bloc (anchor,title ,"h3")
+    blocArticleTitle.droplet;
 }
 
 /**
@@ -51,10 +40,10 @@ function injectTitle (anchor, title){
  * @param {Object} img 
  */
 function injectImg(anchor, img){
-    const domElt    = creElt('img');
-    domElt.src      = img.url;
-    domElt.alt      = img.alt; 
-    appDom(anchor, domElt);
+
+    let myImg = new Bloc(anchor, img,"img");;
+    myImg.addAttribute("src",img.url);
+    myImg.addAttribute("alt",img.alt);
 }
 
 
@@ -68,9 +57,8 @@ function injectPara(anchor, para){
     for (const paragraphe of (para)) {  // tableau de paragraphes objets
     // pour chaque objet paragraphe  on boucle  
         for (const id in paragraphe) {
-            const domElt = creElt('p');
-            domElt.textContent = (paragraphe[id]);
-            appDom(anchor, domElt);
+            let paragraph = new Bloc(anchor,paragraphe[id],'p' );
+            paragraph.appendDom()
         }              
     }        
 }
@@ -81,12 +69,10 @@ function injectPara(anchor, para){
  * @param {String} a 
  */
 function injectA(anchor, a){
-
-    const domElt = creElt('a');
-        domElt.href         = "#";
-        domElt.target       = "_blank";
-        domElt.textContent  = a;
-    appDom(anchor, domElt);
+    let aElt = new Bloc(anchor, a, 'a');
+    aElt.appendDom();
+    aElt.addAttribute("href","#")
+    aElt.addAttribute("target","_blank")
 }
 
 
@@ -102,6 +88,11 @@ function feed(){
 
     // on traite le titre (tableau) 
     injectSectionTitle (anchor, (datas.section.title))   
+
+
+
+
+
 
     // on enleve le titre à l'objet "section", il ne reste que les menus 
     delete datas.section.title; 
