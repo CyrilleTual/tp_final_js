@@ -1,4 +1,5 @@
-import feed from "./feed.js";
+import feedMenus from "./feedMenus.js";
+import { feedNews } from "./feedNews.js";
 
 function toggleSection (){
     const section = document.querySelector("main section:nth-child(2)");
@@ -11,7 +12,11 @@ function toggleAside(){
 }
 
 window.addEventListener('DOMContentLoaded', () =>{
-    feed();  // charge le contenu de la page à partir du fichier de datas (data/index.js)
+    feedMenus();  // charge le contenu de la page à partir du fichier de datas (data/index.js)
+
+    feedNews();
+
+    
 
     // listen sur les bts
     document.getElementById ('btn-section')
