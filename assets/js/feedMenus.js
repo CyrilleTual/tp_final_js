@@ -79,6 +79,7 @@ function injectPara(anchor, para){
  * @param {HTMLElement} anchor 
  * @param {String} a 
  */
+function injectA(anchor, a){
 
     const domElt = creElt('a');
         domElt.href         = "#";
