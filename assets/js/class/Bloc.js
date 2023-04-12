@@ -3,7 +3,7 @@ class Bloc{
 
     constructor (anchor, content, typeOfElt){
         this.anchor = anchor;
-        this.content =  content;
+        this.content =  content || null ;
         this.typeOfElt = typeOfElt;
         this.domElt = null;
         this.appendDom();
@@ -11,7 +11,7 @@ class Bloc{
     
     appendDom(){
     this.domElt = creElt(this. typeOfElt);
-    this.domElt.textContent = (this.content) ;
+    if (this.content !== null)(this.domElt.textContent = (this.content) );
     appDom(this.anchor,this.domElt);
     }
 

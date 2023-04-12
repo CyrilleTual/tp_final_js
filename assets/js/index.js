@@ -1,17 +1,11 @@
 import feedMenus from "./feedMenus.js";
 import { feedNews } from "./feedNews.js";
 
-function toggleSection (){
-    const section = document.querySelector("main section:nth-child(2)");
-    section.style.display !== "flex" ? section.style.display = "flex" : section.style.display = ""; // couche ajoutée par dessus css  
+
+function toggleElement (el){
+    const  target = document.querySelector(el);
+    target.style.display !== ("" || "none") ? target.style.display = "none" : target.style.display = ""; 
 }
-
-function toggleAside(){
-    const aside = document.querySelector("aside");
-    aside.style.display !== "none" || "" ? aside.style.display ="none" : aside.style.display ="";
-}
-
-
 
 
 window.addEventListener('DOMContentLoaded', () =>{
@@ -21,9 +15,9 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     // listen sur les bts
     document.getElementById ('btn-section')
-        .addEventListener('click', toggleSection);
+        .addEventListener('click', () => toggleElement("main section:nth-child(2)"));
 
     document.getElementById ('btn-aside')
-        .addEventListener('click', toggleAside);    
+        .addEventListener('click', () => toggleElement("aside")); 
 })
 
