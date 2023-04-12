@@ -11,6 +11,9 @@ function toggleAside(){
     aside.style.display !== "none" || "" ? aside.style.display ="none" : aside.style.display ="";
 }
 
+
+
+
 window.addEventListener('DOMContentLoaded', () =>{
     feedMenus();  // charge le contenu de la section à partir du fichier de datas (data/index.js)
 

@@ -7,8 +7,6 @@ class Bloc{
         this.typeOfElt = typeOfElt;
         this.domElt = null;
         this.appendDom();
-
-        
     }
     
     appendDom(){
@@ -24,10 +22,11 @@ class Bloc{
     droplet(){
         const droplet1 = (creElt('i'));
         const droplet2 = (creElt('i'));
-        this.domElt.insertAdjacentElement('afterbegin',droplet1);
-        this.domElt.insertAdjacentElement('beforeend',droplet2);
         droplet1.classList.add("fa-droplet","fa-solid");
         droplet2.classList.add("fa-droplet","fa-solid");
+        this.domElt.insertAdjacentElement('afterbegin',droplet1);
+        this.domElt.insertAdjacentElement('beforeend',droplet2);
+        
     }
 
     addAttribute(att,value){

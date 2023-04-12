@@ -3,16 +3,10 @@ import { creElt, appDom } from "./utils.js";
 import Bloc from "./class/Bloc.js";
 
 
-/**
- * fonction injection du titre principal de la section
- * @param {HTMLElement} anchor 
- * @param {Array} title 
- */
+
 function injectSectionTitle (anchor, title){
 
-    // création d'un bloc titre vide 
     let blocTitle = new Bloc(anchor,"","h2");
-    // blocTitle.appendDom()
     // traitement du contenu du H2
     for (let i = 0; i < (title).length; i++){
         let anchor = document.querySelector(blocTitle.typeOfElt)
@@ -23,37 +17,21 @@ function injectSectionTitle (anchor, title){
     }
 }
 
-/**
- * injection du titre de chaque article (menu)
- * @param {HTMLElement} anchor 
- * @param {string} title 
- */
-function injectTitle (anchor, title){
 
+function injectTitle (anchor, title){
     let blocArticleTitle = new Bloc (anchor,title ,"h3")
-    blocArticleTitle.droplet;
+    blocArticleTitle.droplet();
 }
 
-/**
- * injection de l'image
- * @param {HTMLElement} anchor 
- * @param {Object} img 
- */
-function injectImg(anchor, img){
 
+function injectImg(anchor, img){
     let myImg = new Bloc(anchor, img,"img");;
     myImg.addAttribute("src",img.url);
     myImg.addAttribute("alt",img.alt);
 }
 
 
-/**
- * injection des paragraphes
- * @param {HTMLElement} anchor 
- * @param {Array} para 
- */
-function injectPara(anchor, para){
-           
+function injectPara(anchor, para){        
     for (const paragraphe of (para)) {  // tableau de paragraphes objets
     // pour chaque objet paragraphe  on boucle  
         for (const id in paragraphe) {
@@ -63,11 +41,6 @@ function injectPara(anchor, para){
     }        
 }
 
-/**
- * injection du lien
- * @param {HTMLElement} anchor 
- * @param {String} a 
- */
 function injectA(anchor, a){
     let aElt = new Bloc(anchor, a, 'a');
     aElt.appendDom();
@@ -75,24 +48,12 @@ function injectA(anchor, a){
     aElt.addAttribute("target","_blank")
 }
 
-
-
-/**
- * fonction de remplissage des menus à partir d'un fichier de datas
- */
 function feed(){
     // ancre : 2 eme section du main
     const anchor = document.querySelector ('main section:nth-child(2)');
 
-    // l'objet section est composé d'un titre et de menus (en nombre variable)
-
     // on traite le titre (tableau) 
     injectSectionTitle (anchor, (datas.section.title))   
-
-
-
-
-
 
     // on enleve le titre à l'objet "section", il ne reste que les menus 
     delete datas.section.title; 
@@ -118,7 +79,8 @@ function feed(){
         injectPara (article, para)
 
         // et le lien
-        injectA (article, a)       
+        injectA (article, a) 
+     
        
     }
 }
