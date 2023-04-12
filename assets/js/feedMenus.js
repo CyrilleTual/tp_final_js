@@ -1,8 +1,9 @@
 import { datas } from "../../data/index.js";
 import { creElt, appDom } from "./utils.js";
 
+
 /**
- * fonction injexction du titre principal de la section
+ * fonction injection du titre principal de la section
  * @param {HTMLElement} anchor 
  * @param {Array} title 
  */
