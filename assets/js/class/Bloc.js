@@ -26,7 +26,6 @@ class Bloc{
         droplet2.classList.add("fa-droplet","fa-solid");
         this.domElt.insertAdjacentElement('afterbegin',droplet1);
         this.domElt.insertAdjacentElement('beforeend',droplet2);
-        
     }
 
     addAttribute(att,value){
